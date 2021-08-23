@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
 
@@ -27,14 +27,41 @@
 
 table {
   border-collapse: collapse;
+  border-color: gray
 }
 
 td, th {
   border: 1px solid #999;
   padding: 0.5rem;
   text-align: left;
+  display: table-cell;
+  vertical-align: inherit
 }
 
+th{
+  font-weight: bold;
+  /* background-color: #00a9e0; */
+}
 
+tbody {
+  display: table-row-group;
+  vertical-align: middle;
+  border-color: inherit
+}
+
+tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit
+}
+
+footer {
+  margin-bottom: 2%;
+}
+
+.dark-mode{
+  background-color: #195c7e;
+  color: white;
+}
 
 
