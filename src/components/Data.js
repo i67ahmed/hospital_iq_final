@@ -12,6 +12,10 @@ export default function Data(){
   //set search parameters, by name
   const [searchParam] = useState(['name']);
 
+  //set sort options
+  const [sortType, setSortType] = useState(['name']);
+
+
 
   useEffect(() => {
     fetch('https://private-anon-803bf916a0-hospiqtest.apiary-mock.com/units')
@@ -47,6 +51,38 @@ function search(items) {
   });
 }
 
+useEffect ( () => { const sortArray = type => {
+  const types = {
+    id: 'id',
+    name: 'name',
+    capacity: 'capacity',
+    census: 'census',
+    lowAlarm: 'lowAlarm',
+    highAlarm: 'highAlarm'
+  };
+
+  const sortProperty = types[type];
+  const sorted = [...items].sort((a,b) => b[sortProperty] - a[sortProperty]);
+  setItems(sorted); 
+};
+
+sortArray(sortType);
+}, [sortType]);
+
+// const sortByID = () => {
+//   const sorted = [...items].sort((a,b) => {
+//     return b.id - a.id;
+//   });
+//   setItems(sorted);
+// };
+
+// const sortByName = () => {
+//   const sorted = [...items].sort((a,b) => {
+//     return b.name - a.name;
+//   });
+//   setItems(sorted);
+// };
+
 
   if (error) {
     return <>{error.message}</>;
@@ -56,6 +92,16 @@ function search(items) {
     return (
       //map over the elements and display as a table
       <div className = "wrapper">
+        <div className = "sort-wrapper">
+          <select onChange= {(e) => setSortType(e.target.value)}>
+            <option value = "id"> ID </option>
+            <option value = "name"> Name </option>
+            <option value = "census"> Census </option>
+            <option value = "capacity"> Capacity </option>
+            <option value = "highAlarm"> HighAlarm </option>
+            <option value = "lowAlarm"> Low Alarm </option>
+          </select>
+        </div>
         <div className = "search-wrapper">
           <label htmlFor = "search-form">
             <input
@@ -63,7 +109,7 @@ function search(items) {
               name = "search-form"
               id = "search-form"
               className = "search-input"
-              placeholder = "Search for..."
+              placeholder = "Search unit name..."
               value = {q}
 
               //set the value of our useState q, anytime the user types in the search box
@@ -75,8 +121,12 @@ function search(items) {
       <table className= "datatable">
       <tbody>
         <tr className= "datatable_titles">
-          <th>ID</th>
-          <th>Name</th>
+          <th>
+            ID
+          </th>
+          <th>
+             Unit Name
+          </th>
           <th>Capacity</th>
           <th>Census</th>
           <th>High Alarm</th>
