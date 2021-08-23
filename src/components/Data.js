@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export default function Data(url){
+export default function Data(){
 
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -18,10 +18,8 @@ export default function Data(url){
 
 //gets data from the api
   useEffect(() => {
-    
-    url = 'https://private-anon-803bf916a0-hospiqtest.apiary-mock.com/units';
 
-    fetch(url)
+    fetch('https://private-anon-803bf916a0-hospiqtest.apiary-mock.com/units')
       .then((res) => res.json())
       .then(
         (res) => {
@@ -69,6 +67,7 @@ useEffect ( () => { const sortArray = type => {
 };
 
 sortArray(sortType);
+// eslint-disable-next-line
 }, [sortType]);
 
 
@@ -82,6 +81,7 @@ sortArray(sortType);
       //map over the elements and display as a table
       <div className = "wrapper">
         <div className = "sort-wrapper">
+          <div> Sort Data by Column </div>
           <select onChange= {(e) => setSortType(e.target.value)}
           //sets the sort type as the option a user choses
           >
@@ -109,43 +109,45 @@ sortArray(sortType);
               />
           </label>
         </div>
-      <table className= "datatable">
-      <tbody>
-        <tr className= "datatable_titles">
-          <th>
-            ID
-          </th>
-          <th>
-             Unit Name
-          </th>
-          <th>Capacity</th>
-          <th>Census</th>
-          <th>High Alarm Patients</th>
-          <th>Low Alarm Patients</th>
-        </tr>
-      { search(items).map((item) => (
-            <tr className= "datatable_entries" key={item.id}>
-              <td>{item.id}</td>
-              <td>
-                {item.name}
-              </td>
-              <td>
-                {item.capacity}
-              </td>
-              <td>
-                {item.census}
-              </td>
-              <td>
-                {item.highAlarm}
-              </td>
-              <td>
-                {item.lowAlarm}
-              </td>
-            </tr>
-        ))
-      }
-    </tbody>
-  </table>
+      <div className = "table-responsive">
+        <table className= "datatable">
+        <tbody>
+          <tr className= "datatable_titles">
+            <th>
+              ID
+            </th>
+            <th>
+              Unit Name
+            </th>
+            <th>Capacity</th>
+            <th>Census</th>
+            <th>High Alarm Patients</th>
+            <th>Low Alarm Patients</th>
+          </tr>
+        { search(items).map((item) => (
+              <tr className= "datatable_entries" key={item.id}>
+                <td>{item.id}</td>
+                <td>
+                  {item.name}
+                </td>
+                <td>
+                  {item.capacity}
+                </td>
+                <td>
+                  {item.census}
+                </td>
+                <td>
+                  {item.highAlarm}
+                </td>
+                <td>
+                  {item.lowAlarm}
+                </td>
+              </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>  
   </div>
     )
   }
