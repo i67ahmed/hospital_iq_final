@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export default function Data(){
+export default function Data(url){
 
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -18,7 +18,10 @@ export default function Data(){
 
 //gets data from the api
   useEffect(() => {
-    fetch('https://private-anon-803bf916a0-hospiqtest.apiary-mock.com/units')
+    
+    url = 'https://private-anon-803bf916a0-hospiqtest.apiary-mock.com/units';
+
+    fetch(url)
       .then((res) => res.json())
       .then(
         (res) => {
@@ -83,11 +86,11 @@ sortArray(sortType);
           //sets the sort type as the option a user choses
           >
             <option value = "id"> ID </option>
-            <option value = "name"> Name </option>
+            <option value = "name"> Unit Name </option>
             <option value = "census"> Census </option>
             <option value = "capacity"> Capacity </option>
-            <option value = "highAlarm"> HighAlarm </option>
-            <option value = "lowAlarm"> Low Alarm </option>
+            <option value = "highAlarm"> High Alarm Patients</option>
+            <option value = "lowAlarm"> Low Alarm Patients</option>
           </select>
         </div>
         <div className = "search-wrapper">
@@ -117,8 +120,8 @@ sortArray(sortType);
           </th>
           <th>Capacity</th>
           <th>Census</th>
-          <th>High Alarm</th>
-          <th>Low Alarm</th>
+          <th>High Alarm Patients</th>
+          <th>Low Alarm Patients</th>
         </tr>
       { search(items).map((item) => (
             <tr className= "datatable_entries" key={item.id}>
