@@ -16,7 +16,7 @@ export default function Data(){
   const [sortType, setSortType] = useState(['name']);
 
 
-
+//gets data from the api
   useEffect(() => {
     fetch('https://private-anon-803bf916a0-hospiqtest.apiary-mock.com/units')
       .then((res) => res.json())
@@ -33,11 +33,9 @@ export default function Data(){
       );
       }, []);
 
-    /* here we create a function 
-//     we filter the items
+//here we create a function 
+// we filter the items
 // use array property .some() to return an item even if other requirements didn't match
-    */
-
 function search(items) {
   return items.filter((item) => {
       return searchParam.some((newItem) => {
@@ -51,6 +49,7 @@ function search(items) {
   });
 }
 
+//creates ability for users to sort the datatable based on whichever data-type they choose from the dropdown menu
 useEffect ( () => { const sortArray = type => {
   const types = {
     id: 'id',
@@ -69,19 +68,6 @@ useEffect ( () => { const sortArray = type => {
 sortArray(sortType);
 }, [sortType]);
 
-// const sortByID = () => {
-//   const sorted = [...items].sort((a,b) => {
-//     return b.id - a.id;
-//   });
-//   setItems(sorted);
-// };
-
-// const sortByName = () => {
-//   const sorted = [...items].sort((a,b) => {
-//     return b.name - a.name;
-//   });
-//   setItems(sorted);
-// };
 
 
   if (error) {
@@ -93,7 +79,9 @@ sortArray(sortType);
       //map over the elements and display as a table
       <div className = "wrapper">
         <div className = "sort-wrapper">
-          <select onChange= {(e) => setSortType(e.target.value)}>
+          <select onChange= {(e) => setSortType(e.target.value)}
+          //sets the sort type as the option a user choses
+          >
             <option value = "id"> ID </option>
             <option value = "name"> Name </option>
             <option value = "census"> Census </option>
