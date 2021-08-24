@@ -2,9 +2,9 @@
 
 The goal of this exercise is to:
 
-1.) Consume the output of a simple API
-2.) Use HTML, CSS and Javascript to render the data in a readable, usable manner
-3.) Add some sorting mechanism so the data can be sorted in different ways
+  1.) Consume the output of a simple API
+  2.) Use HTML, CSS and Javascript to render the data in a readable, usable manner
+  3.) Add some sorting mechanism so the data can be sorted in different ways
 
 ## Solution formulation
 
@@ -28,6 +28,7 @@ Steps I thought of and executed for this exercise:
   https://github.com/i67ahmed/hospital_iq_final/blob/da2a5131e289ab3d58cb8e579acae0d47a7e69a3/src/components/Data.js#L74-L78
 
 5.) If the hospital data was loaded
+
   a.) Search bar is set up
 
      https://github.com/i67ahmed/hospital_iq_final/blob/da2a5131e289ab3d58cb8e579acae0d47a7e69a3/src/components/Data.js#L96-L111 
@@ -61,7 +62,8 @@ Steps I thought of and executed for this exercise:
 
 1.) git clone https://github.com/i67ahmed/hospital_iq_final.git
 
-2.) npm i 
+2.) npm install
+
 3.) npm start or yarn start -> to run app (loads in http://localhost:3000)
   a.) npm test or yarn test  -> to see test-output
 
@@ -71,7 +73,11 @@ Steps I thought of and executed for this exercise:
 
  ## Decisions and Tradeoffs
 
+ * 
+
  ## If it was a bigger project 
+  
+ * 
 
 
 
