@@ -75,7 +75,8 @@ Steps I thought of and executed for this exercise:
 
  * I chose to use React for this project, because I'm currently learning React in my bootcamp course. I felt this would be a great opportunity for me to learn more about React and gain experience with the framework.
 
- * In using React I elected to use React Hooks. My thought process there was that this app only provides a single view and there is no state sharing between components. Using something like Redux for a project of this scope would just be added complexity. React Hooks 
+ * In using React I elected to use React Hooks. My thought process there was that this app only provides a single view and there is no state sharing between components. This means using something like Redux for a project of this scope would just be added complexity. React hooks allow you to use state and other React features without writing a class.
+  * The hooks used in this project are the useState hook and the useEffect hook. 
 
  ## If it was a bigger project 
   
