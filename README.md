@@ -1,10 +1,76 @@
-# Getting Started with Create React App
+# Hospital IQ » Front-end Engineer Exercise
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The goal of this exercise is to:
 
-## Available Scripts
+1.) Consume the output of a simple API
+2.) Use HTML, CSS and Javascript to render the data in a readable, usable manner
+3.) Add some sorting mechanism so the data can be sorted in different ways
 
-In the project directory, you can run:
+## Solution formulation
+
+Steps I thought of and executed for this exercise:
+
+1.) Call the given api to retrieve the sample hospital data
+
+  https://github.com/i67ahmed/hospital_iq_v2/blob/da2a5131e289ab3d58cb8e579acae0d47a7e69a3/src/components/Data.js#L21-L36
+
+
+2.) Create a function so users can search through the retrieved data 
+
+  https://github.com/i67ahmed/hospital_iq_v2/blob/da2a5131e289ab3d58cb8e579acae0d47a7e69a3/src/components/Data.js#L41-L52
+
+3.) Create functionality for users to sort the data-table
+
+  https://github.com/i67ahmed/hospital_iq_v2/blob/da2a5131e289ab3d58cb8e579acae0d47a7e69a3/src/components/Data.js#L55-L70
+
+4.) Create render options, based on whether the data was loaded, loading, or an error happened
+
+  https://github.com/i67ahmed/hospital_iq_v2/blob/da2a5131e289ab3d58cb8e579acae0d47a7e69a3/src/components/Data.js#L74-L78
+
+5.) If the hospital data was loaded
+  a.) Search bar is set up
+
+     https://github.com/i67ahmed/hospital_iq_v2/blob/da2a5131e289ab3d58cb8e579acae0d47a7e69a3/src/components/Data.js#L96-L111 
+
+
+  b.) Filter drop-down is set up
+
+    https://github.com/i67ahmed/hospital_iq_v2/blob/da2a5131e289ab3d58cb8e579acae0d47a7e69a3/src/components/Data.js#L83-L95
+
+
+  c.) Data table is rendered 
+
+      https://github.com/i67ahmed/hospital_iq_v2/blob/da2a5131e289ab3d58cb8e579acae0d47a7e69a3/src/components/Data.js#L112-L157
+
+  d.) Export datatable to excel functionality is setup
+
+    https://github.com/i67ahmed/hospital_iq_v2/blob/da2a5131e289ab3d58cb8e579acae0d47a7e69a3/src/components/Data.js#L158-L164
+
+6.) Allow users to toggle between dark and light view mode
+
+  https://github.com/i67ahmed/hospital_iq_v2/blob/da2a5131e289ab3d58cb8e579acae0d47a7e69a3/src/components/Header.js#L7-L22
+
+## Libraries/Tools used
+
+* Main dependency is the React library 
+  * react, react-dom, react-html-table-to-excel
+* Uses Jest for testing  
+* Styling utilizes: Bootstrap & FontAwesome 
+
+## How to Setup 
+
+1.) git clone 
+2.) npm i 
+3.) npm start or yran start -> to run app
+  a.) npm test or yarn test  -> to see test-output
+
+## Running tests
+
+ * To run tests run 'yarn test' or 'npm test' on project root
+
+ ## Decisions and Tradeoffs
+
+ ## If it was a bigger project 
 
 ### `yarn start`
 
@@ -16,55 +82,5 @@ You will also see any lint errors in the console.
 
 ### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
