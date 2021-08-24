@@ -1,4 +1,4 @@
-# Hospital IQ » Front-end Engineer Exercise
+## Hospital IQ » Front-end Engineer Exercise
 
 The goal of this exercise is to:
 
@@ -28,7 +28,6 @@ Steps I thought of and executed for this exercise:
   https://github.com/i67ahmed/hospital_iq_v2/blob/da2a5131e289ab3d58cb8e579acae0d47a7e69a3/src/components/Data.js#L74-L78
 
 5.) If the hospital data was loaded
-  
   a.) Search bar is set up
 
      https://github.com/i67ahmed/hospital_iq_v2/blob/da2a5131e289ab3d58cb8e579acae0d47a7e69a3/src/components/Data.js#L96-L111 
@@ -63,7 +62,7 @@ Steps I thought of and executed for this exercise:
 1.) git clone https://github.com/i67ahmed/hospital_iq_v2.git
 
 2.) npm i 
-3.) npm start or yran start -> to run app (loads in http://localhost:3000)
+3.) npm start or yarn start -> to run app (loads in http://localhost:3000)
   a.) npm test or yarn test  -> to see test-output
 
 ## Running tests
