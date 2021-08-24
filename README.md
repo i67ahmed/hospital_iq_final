@@ -61,7 +61,7 @@ Steps I thought of and executed for this exercise:
 
 1.) git clone 
 2.) npm i 
-3.) npm start or yran start -> to run app
+3.) npm start or yran start -> to run app (loads in http://localhost:3000)
   a.) npm test or yarn test  -> to see test-output
 
 ## Running tests
@@ -72,15 +72,6 @@ Steps I thought of and executed for this exercise:
 
  ## If it was a bigger project 
 
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
 
 
 
