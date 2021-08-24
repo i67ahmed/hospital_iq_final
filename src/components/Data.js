@@ -92,13 +92,7 @@ sortArray(sortType);
             <option value = "census"> Unit Census </option>
             <option value = "capacity"> Unit Capacity </option>
             <option value = "highAlarm"> Unit High Alarm </option>
-            <option value = "aboveAlarm">
-              Unit Census Triggered High Alarm
-            </option>
             <option value = "lowAlarm"> Low Alarm </option>
-            <option value = "belowAlarm">
-              Unit Census Triggered Low Alarm
-            </option>
           </select>
         </div>
         <div className = "search-wrapper">
@@ -154,13 +148,13 @@ sortArray(sortType);
                   {!item.highAlarm ? "0" : item.highAlarm}
                 </td>
                 <td>
-                {(item.census - item.highAlarm >= 0) ? `Unit census is ${item.census- item.highAlarm} above high Alarm` : ""}
+                {(item.census - item.highAlarm >= 0) ? `Unit census triggered high Alarm by ${item.census- item.highAlarm}` : ""}
                 </td>
                 <td>
                   {!item.lowAlarm ? "0" : item.lowAlarm}
                 </td>
                 <td>
-                {(item.census - item.lowAlarm <= 0) ? `Unit census is ${item.lowAlarm- item.census} below low Alarm` : ""}
+                {(item.census - item.lowAlarm <= 0) ? `Unit census triggered low Alarm by ${item.lowAlarm- item.census}` : ""}
                 </td>
               </tr>
           ))
