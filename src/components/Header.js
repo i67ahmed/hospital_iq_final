@@ -13,7 +13,7 @@ class Header extends Component {
 
     return (
      <div>
-       <img src= "..\assets\hospiq.logo.png" alt="Hospital IQ Logo"></img>
+       <img src="https://www.hospiq.com/wp-content/uploads/2020/03/HospitalIQ-LOGO-small.png" srcset="https://www.hospiq.com/wp-content/uploads/2020/03/HospitalIQ-LOGO-small.png 1x" width="230" height="47" alt="Hospital IQ Logo" data-retina_logo_url="" class="fusion-standard-logo"></img>
       <button onClick = {myFunction}>
        <i id="dark-mode-btn" className="toggler far fa-moon"></i>
       </button>
