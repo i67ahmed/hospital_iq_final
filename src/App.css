@@ -13,7 +13,7 @@
 .datatable {
   width: 100%;
   margin-top: 3.5%;
-  margin-bottom: 3.5%;
+  margin-bottom: 1.5%;
 }
 
 .sort-wrapper{
@@ -33,14 +33,13 @@ table {
 td, th {
   border: 1px solid #999;
   padding: 0.5rem;
-  text-align: left;
+  text-align: center;
   display: table-cell;
   vertical-align: inherit
 }
 
 th{
-  font-weight: bold;
-  /* background-color: #00a9e0; */
+  font-weight: bold
 }
 
 tbody {
@@ -55,12 +54,16 @@ tr {
   border-color: inherit
 }
 
+.alarm-checks {
+  text-align: center;
+}
+
 footer {
   margin-bottom: 2%;
 }
 
+
 /* Button styling */
-/* Button */
 
 button {
   border: 0;

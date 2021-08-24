@@ -57,10 +57,6 @@ useEffect ( () => { const sortArray = type => {
     name: 'name',
     capacity: 'capacity',
     census: 'census',
-    lowAlarm: 'lowAlarm',
-    highAlarm: 'highAlarm',
-    aboveAlarm: 'aboveAlarm',
-    belowAlarm: 'belowAlarm'
   };
 
   const sortProperty = types[type];
@@ -79,6 +75,7 @@ sortArray(sortType);
   } else if (!isLoaded){
     return <>loading...</>;
   } else {
+
     return (
       //map over the elements and display as a table
       <div className = "wrapper">
@@ -87,12 +84,10 @@ sortArray(sortType);
           <select onChange= {(e) => setSortType(e.target.value)}
           //sets the sort type as the option a user choses
           >
-            <option value = "id"> ID </option>
+            <option value = "id"> Unit ID </option>
             <option value = "name"> Unit Name </option>
             <option value = "census"> Unit Census </option>
             <option value = "capacity"> Unit Capacity </option>
-            <option value = "highAlarm"> Unit High Alarm </option>
-            <option value = "lowAlarm"> Low Alarm </option>
           </select>
         </div>
         <div className = "search-wrapper">
@@ -116,18 +111,20 @@ sortArray(sortType);
         <tbody>
           <tr className= "datatable_titles">
             <th>
-              ID
+              Unit ID
             </th>
             <th>
               Unit Name
             </th>
-            <th>Capacity</th>
-            <th>Census</th>
-            <th> Unit High Alarm </th>
+            <th>
+              Unit Capacity
+            </th>
+            <th> 
+              Unit Census
+            </th>
             <th>
              Unit Census Triggered High Alarm
             </th>
-            <th> Unit Low Alarm </th>
             <th>
             Unit Census Triggered Low Alarm
             </th>
@@ -144,17 +141,11 @@ sortArray(sortType);
                 <td>
                   {item.census}
                 </td>
-                <td>
-                  {!item.highAlarm ? "0" : item.highAlarm}
+                <td className = "alarm-checks">
+                {((item.census - item.highAlarm >= 0) && !(item.census - item.lowAlarm <= 0)) ? <span> &#10004; </span> : ""}
                 </td>
-                <td>
-                {(item.census - item.highAlarm >= 0) ? `Unit census triggered high Alarm by ${item.census- item.highAlarm}` : ""}
-                </td>
-                <td>
-                  {!item.lowAlarm ? "0" : item.lowAlarm}
-                </td>
-                <td>
-                {(item.census - item.lowAlarm <= 0) ? `Unit census triggered low Alarm by ${item.lowAlarm- item.census}` : ""}
+                <td className = "alarm-checks">
+                {(item.census - item.lowAlarm <= 0) ? <span> &#10004; </span> : ""}
                 </td>
               </tr>
           ))
