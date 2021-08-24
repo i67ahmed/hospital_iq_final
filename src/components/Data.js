@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import ReactHTMLTableToExcel from 'react-html-table-to-excel'; 
 
 export default function Data(){
 
@@ -107,7 +108,7 @@ sortArray(sortType);
           </label>
         </div>
       <div className = "table-responsive">
-        <table className= "datatable">
+        <table id= "Hospital_Data" className= "datatable">
         <tbody>
           <tr className= "datatable_titles">
             <th>
@@ -152,6 +153,13 @@ sortArray(sortType);
         }
       </tbody>
     </table>
+    <div>
+      <ReactHTMLTableToExcel className = "btn btn-success"
+      table = "Hospital_Data" 
+      filename = "HospitalData_Excel"
+      sheet = "Sheet"
+      buttonText = "Export to excel" />
+    </div>
   </div>  
   </div>
     )
