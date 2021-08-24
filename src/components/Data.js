@@ -51,7 +51,7 @@ function search(items) {
   });
 }
 
-//creates ability for users to sort the datatable based on whichever data-type they choose from the dropdown menu
+//creates ability for users to sort the datatable based on whichever column they choose from the dropdown menu
 useEffect ( () => { const sortArray = type => {
   const types = {
     id: 'id',
@@ -81,23 +81,25 @@ sortArray(sortType);
       //map over the elements and display as a table
       <div className = "wrapper">
         <div className = "sort-wrapper">
-          <div> Sort Data by Column </div>
-          <select onChange= {(e) => setSortType(e.target.value)}
+          <select className="form-select"
+          defaultValue={'DEFAULT'} 
+          onChange= {(e) => setSortType(e.target.value)}
           //sets the sort type as the option a user choses
           >
+            <option value = 'DEFAULT'>Sort Data by Column</option>
             <option value = "id"> Unit ID </option>
             <option value = "name"> Unit Name </option>
             <option value = "census"> Unit Census </option>
             <option value = "capacity"> Unit Capacity </option>
           </select>
         </div>
-        <div className = "search-wrapper">
+        <div className = "search-wrapper form-outline">
           <label htmlFor = "search-form">
             <input
               type = "search"
               name = "search-form"
               id = "search-form"
-              className = "search-input"
+              className = "search-input form-control"
               placeholder = "Search unit name..."
               value = {q}
 
