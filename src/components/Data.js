@@ -137,10 +137,10 @@ sortArray(sortType);
                   {item.census}
                 </td>
                 <td>
-                  {item.highAlarm}
+                  {!item.highAlarm ? "0" : item.highAlarm}
                 </td>
                 <td>
-                  {item.lowAlarm}
+                  {!item.lowAlarm ? "0" : item.lowAlarm}
                 </td>
               </tr>
           ))

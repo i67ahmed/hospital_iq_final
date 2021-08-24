@@ -9,11 +9,13 @@ class Header extends Component {
       element.classList.toggle("dark-mode");
     }
 
+
+
     return (
      <div>
        <img src= "..\assets\hospiq.logo.png" alt="Hospital IQ Logo"></img>
       <button onClick = {myFunction}>
-        Toggle to Dark Mode
+       <i id="dark-mode-btn" className="toggler far fa-moon"></i>
       </button>
      </div>
     )
