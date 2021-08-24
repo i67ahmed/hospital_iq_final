@@ -43,7 +43,7 @@ Steps I thought of and executed for this exercise:
 
       https://github.com/i67ahmed/hospital_iq_final/blob/da2a5131e289ab3d58cb8e579acae0d47a7e69a3/src/components/Data.js#L112-L157
 
-  d.) Export datatable to excel functionality is setup
+  d.) Export data table to excel functionality is setup
 
     https://github.com/i67ahmed/hospital_iq_final/blob/da2a5131e289ab3d58cb8e579acae0d47a7e69a3/src/components/Data.js#L158-L164
 
@@ -73,11 +73,21 @@ Steps I thought of and executed for this exercise:
 
  ## Decisions and Tradeoffs
 
- * 
+ * I chose to use React for this project, because I'm currently learning React in my bootcamp course. I felt this would be a great opportunity for me to learn more about React and gain experience with the framework.
+
+ * In using React I elected to use React Hooks. My thought process there was that this app only provides a single view and there is no state sharing between components. Using something like Redux for a project of this scope would just be added complexity. React Hooks 
 
  ## If it was a bigger project 
   
- * 
+ * Since this was a coding challenge the scope was quite small. However, if this was a bigger project with a real client here are some things I would do differently. 
+
+    1.) Spend more time designing and planning the UX/UI experience for the client's intended audience.
+
+    2.) Set up pagination functionality for the data-table. 
+
+    3.) Allow for users to export subsets of the data-table rather than the entirety of it. 
+
+    4.) If the project called for more components that shared the hospital data from the API. I would transition this project to use Redux.
 
 
 
