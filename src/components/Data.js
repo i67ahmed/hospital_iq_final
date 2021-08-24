@@ -58,7 +58,9 @@ useEffect ( () => { const sortArray = type => {
     capacity: 'capacity',
     census: 'census',
     lowAlarm: 'lowAlarm',
-    highAlarm: 'highAlarm'
+    highAlarm: 'highAlarm',
+    aboveAlarm: 'aboveAlarm',
+    belowAlarm: 'belowAlarm'
   };
 
   const sortProperty = types[type];
@@ -87,10 +89,16 @@ sortArray(sortType);
           >
             <option value = "id"> ID </option>
             <option value = "name"> Unit Name </option>
-            <option value = "census"> Census </option>
-            <option value = "capacity"> Capacity </option>
-            <option value = "highAlarm"> High Alarm Patients</option>
-            <option value = "lowAlarm"> Low Alarm Patients</option>
+            <option value = "census"> Unit Census </option>
+            <option value = "capacity"> Unit Capacity </option>
+            <option value = "highAlarm"> Unit High Alarm </option>
+            <option value = "aboveAlarm">
+              Unit Census Triggered High Alarm
+            </option>
+            <option value = "lowAlarm"> Low Alarm </option>
+            <option value = "belowAlarm">
+              Unit Census Triggered Low Alarm
+            </option>
           </select>
         </div>
         <div className = "search-wrapper">
@@ -121,8 +129,14 @@ sortArray(sortType);
             </th>
             <th>Capacity</th>
             <th>Census</th>
-            <th>High Alarm Patients</th>
-            <th>Low Alarm Patients</th>
+            <th> Unit High Alarm </th>
+            <th>
+             Unit Census Triggered High Alarm
+            </th>
+            <th> Unit Low Alarm </th>
+            <th>
+            Unit Census Triggered Low Alarm
+            </th>
           </tr>
         { search(items).map((item) => (
               <tr className= "datatable_entries" key={item.id}>
@@ -140,7 +154,13 @@ sortArray(sortType);
                   {!item.highAlarm ? "0" : item.highAlarm}
                 </td>
                 <td>
+                {(item.census - item.highAlarm >= 0) ? `Unit census is ${item.census- item.highAlarm} above high Alarm` : ""}
+                </td>
+                <td>
                   {!item.lowAlarm ? "0" : item.lowAlarm}
+                </td>
+                <td>
+                {(item.census - item.lowAlarm <= 0) ? `Unit census is ${item.lowAlarm- item.census} below low Alarm` : ""}
                 </td>
               </tr>
           ))
